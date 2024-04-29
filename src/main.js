@@ -7,8 +7,8 @@ import HomePage from './pages/HomePage.vue'
 import Profile from './pages/UserProfile.vue'
 
 const routes = [
-    { path: '/', name:'HomePage', component: HomePage},
-    { path: '/Profile', component: Profile }
+    { path: '/first_vue_project', name:'HomePage', component: HomePage},
+    { path: '/first_vue_project/Profile', component: Profile }
 ]
 
 const router = createRouter({

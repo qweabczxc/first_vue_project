@@ -11,15 +11,15 @@ function bonus() {
 
 <template>
   <div class="first">
-    <RouterLink to="/" class="shop">zx production</RouterLink>
+    <RouterLink to="/first_vue_project" class="shop">zx production</RouterLink>
 
     <div class="wallet">
       <p>{{ money }}</p>
       <img src="/public/Tango_icon.png" class="tango" @click="bonus" />
     </div>
     <div class="links">
-      <RouterLink to="/" class="shop">Магазин</RouterLink>
-      <router-link to="/Profile" class="profile">Профиль</router-link>
+      <RouterLink to="/first_vue_project" class="shop">Магазин</RouterLink>
+      <router-link to="/first_vue_project/Profile" class="profile">Профиль</router-link>
     </div>
   </div>
   <hr />
