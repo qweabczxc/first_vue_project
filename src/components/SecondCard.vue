@@ -6,22 +6,25 @@ const props = defineProps({
   name: String,
   price: Number,
   url: String,
-  id: Number
+  id: Number,
+  zx_count: Number
 })
+let rrcount = ref(props.zx_count);
 const isVisible = ref(true)
 const money = inject('money')
 const Sell = async (price) => {
   const params = {
     card_id: props.id
   }
-  const response = await axios.get('https://06a27ab42efa8997.mokky.dev/profile', { params })
+  const response = await axios.get('https://4540e4046909eac7.mokky.dev/profile', { params })
   const { count, id } = response.data[0]
-  await axios.patch(`https://06a27ab42efa8997.mokky.dev/profile/${id}`, {
+  await axios.patch(`https://4540e4046909eac7.mokky.dev/profile/${id}`, {
     count: count - 1
   })
+  rrcount.value--;
   money.value += price
   if (count <= 1) {
-    await axios.delete(`https://06a27ab42efa8997.mokky.dev/profile/${id}`, {
+    await axios.delete(`https://4540e4046909eac7.mokky.dev/profile/${id}`, {
       params
     })
     isVisible.value = false
@@ -36,6 +39,7 @@ const Sell = async (price) => {
     <div class="desc_Sell">
       <div class="descriptions">
         <p class="name">{{ name }}</p>
+        <p class="count">Кол-во: {{ rrcount }} </p>
         <div class="TangoAndSell">
           <p class="price">{{ price }}</p>
 
@@ -49,15 +53,17 @@ const Sell = async (price) => {
 <style scoped>
 .card {
   flex-direction: column;
-  width: 300px;
-  border-radius: 15px;
-  border: solid gainsboro 1px;
-  cursor: pointer;
-  margin-top: 8px;
+    width: 300px;
+    border-radius: 15px;
+    border: solid gainsboro 1px;
+    cursor: pointer;
+    margin-top: 8px;
+    background-color: #d7dfe9;
+    border: outset 5px black;
 }
 .moon_shard {
   width: 301px;
-  border-radius: 14px 14px 0 0;
+  border-radius: 8px 8px 0 0;
   align-self: center;
 }
 .descriptions {
@@ -75,8 +81,8 @@ button {
   background-color: white;
   border: none;
   width: 100px;
-  border-radius: 15px 0 14px 0;
-  background-color: gray;
+  border-radius: 8px 0 8px 0;
+  background-color: #c4b4f8;
   margin-top: -5px;
   padding-left: 16px;
   padding-top: 6px;
@@ -91,4 +97,5 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+
 </style>

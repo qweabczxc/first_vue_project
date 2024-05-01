@@ -9,10 +9,9 @@ import Main from '../components/SecondCard.vue'
 const items = ref([])
 
 onMounted(async () =>{
-    const { data } = await axios.get('https://06a27ab42efa8997.mokky.dev/profile?_relations=cards')
+    const { data } = await axios.get('https://4540e4046909eac7.mokky.dev/profile?_relations=cards')
   items.value = data
 })
-
 
 </script>
 
@@ -25,7 +24,7 @@ onMounted(async () =>{
       :name="item.card.name"
       :price="item.card.price"
       :url="item.card.url"
-
+      :zx_count="item.count"
     />
   </div>
   <RouterView />

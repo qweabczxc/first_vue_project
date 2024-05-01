@@ -19,15 +19,15 @@ const buy = async (price) => {
     money.value -= price;
 
 
-      const response = await axios.get('https://06a27ab42efa8997.mokky.dev/profile', { params });
+      const response = await axios.get('https://4540e4046909eac7.mokky.dev/profile', { params });
       
       if (response.data.length > 0) {
         const [{ id, count }] = response.data;
-        await axios.patch(`https://06a27ab42efa8997.mokky.dev/profile/${id}`, {
+        await axios.patch(`https://4540e4046909eac7.mokky.dev/profile/${id}`, {
         count: count+1
     });
       } else {
-        await axios.post('https://06a27ab42efa8997.mokky.dev/profile', {
+        await axios.post('https://4540e4046909eac7.mokky.dev/profile', {
           ['card_id']: props.id,
           ['count']: 1
         });
@@ -67,10 +67,12 @@ const buy = async (price) => {
     border: solid gainsboro 1px;
     cursor: pointer;
     margin-top: 8px;
+    background-color: #d7dfe9;
+    border: outset 5px black;
 }
 .moon_shard{
     width: 301px;
-    border-radius: 14px 14px 0 0;
+    border-radius: 8px 8px 0 0;
     align-self: center;
 }
 .descriptions{
@@ -80,16 +82,16 @@ const buy = async (price) => {
 }
 .card:hover{
     translate: 0px -6px;
-    box-shadow: 0px 0px 120px rgba(0, 0, 0, 0.5);
+
 }
 button{
     display: flex;
     justify-self: end;
-    background-color: white;
     border:none;
     width: 100px;
-    border-radius: 15px 0 14px 0;
-    background-color: gray;
+    border-radius: 15px 0 8px 0;
+    
+    background-color: #c4b4f8;
     margin-top: -5px;
     padding-left: 16px;
     padding-top: 6px;

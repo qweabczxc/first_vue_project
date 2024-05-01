@@ -22,7 +22,7 @@ const fetchItems = async () => {
   if (searchQuery.value) {
     params.name = `*${searchQuery.value}*`
   }
-  const { data } = await axios.get('https://06a27ab42efa8997.mokky.dev/cards', {
+  const { data } = await axios.get('https://4540e4046909eac7.mokky.dev/cards', {
     params
   })
   items.value = data
