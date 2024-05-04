@@ -53,7 +53,7 @@ const Sell = async (price) => {
 <style scoped>
 .card {
   flex-direction: column;
-    width: 300px;
+    width: 400px;
     border-radius: 15px;
     border: solid gainsboro 1px;
     cursor: pointer;
@@ -62,7 +62,8 @@ const Sell = async (price) => {
     border: outset 5px black;
 }
 .moon_shard {
-  width: 301px;
+  width: 401px;
+  height: 350px;
   border-radius: 8px 8px 0 0;
   align-self: center;
 }
@@ -89,7 +90,7 @@ button {
 }
 .tango {
   width: 50px;
-  margin-left: -66px;
+  margin-left: -160px;
 }
 .TangoAndSell {
   margin-top: -50px;
